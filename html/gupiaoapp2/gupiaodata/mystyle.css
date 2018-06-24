@@ -1,0 +1,44 @@
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+
+<style>
+.table9_4 table {
+	width:100%;
+	margin:15px 0
+}
+.table9_4 th {
+	font-size:24px;
+	background-color:#C3E7FA;
+	background:-o-linear-gradient(90deg, #C3E7FA, #dcf1fc);
+	background:-moz-linear-gradient( center top, #C3E7FA 5%, #dcf1fc 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #C3E7FA), color-stop(1, #dcf1fc) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#C3E7FA', endColorstr='#dcf1fc');
+	color:#000000
+}
+.table9_4,.table9_4 th,.table9_4 td
+{
+	font-size:0.95em;
+	font-size:36px;
+	text-align:center;
+	padding:4px;
+	border:1px solid #afdff8;
+	border-collapse:collapse
+}
+.table9_4 td {
+	font-size:24px;
+	border:1px solid #dcf1fc;
+	border-collapse:collapse
+
+}
+.table9_4 tr:nth-child(odd){
+	background-color:#ebf7fd;
+	background:-o-linear-gradient(90deg, #ebf7fd, #fbfdfe);
+	background:-moz-linear-gradient( center top, #ebf7fd 5%, #fbfdfe 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ebf7fd), color-stop(1, #fbfdfe) );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebf7fd', endColorstr='#fbfdfe');
+}
+.table9_4 tr:nth-child(even){
+	background-color:#fdfdfd;
+}
+</style>

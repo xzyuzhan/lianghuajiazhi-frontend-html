@@ -1,0 +1,38 @@
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+
+<style>
+.table9_4 table {
+	width:100%;
+	margin:15px 0
+	FILTER: alpha(opacity=50)
+}
+.table9_4 th {
+	font-size:24px;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#C3E7FA', endColorstr='#dcf1fc');
+	color:#000000
+}
+.table9_4,.table9_4 th,.table9_4 td
+{
+	font-size:0.95em;
+	font-size:36px;
+	text-align:center;
+	padding:4px;
+	border:1px solid #afdff8;
+	border-collapse:collapse
+}
+.table9_4 td {
+	font-size:24px;
+	border:1px solid #dcf1fc;
+	border-collapse:collapse
+
+}
+.table9_4 tr:nth-child(odd){
+	background:white;
+	FILTER: alpha(opacity=10)
+}
+.table9_4 tr:nth-child(even){
+	FILTER: alpha(opacity=50)
+}
+</style>

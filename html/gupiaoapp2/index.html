@@ -1,0 +1,127 @@
+
+
+<html>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<meta HTTP-EQUIV="expires" CONTENT="0"> 
+
+<script type="text/javascript" src="jquery/jquery.js"></script>
+
+<link type="text/css" rel="styleSheet"  href="gupiaodata/mystyle.css" />
+
+</head>
+
+
+
+<body  onload="myonload()">
+<title>YUZ量化价值模型试运行网站</title>
+<h1><center><font color="brown">YUZ量化价值模型试运行网站</font></center></h1>
+
+<font size=3 color="red">
+
+免责声明：这是一个tomcat/java/python程序员的练习个人网站!其中的数据有可能是旧的数据，除了本网站的站长之外，任何人请勿参考！ <br>
+
+</font>
+<font size=5>
+<font color="green">&#x2691</font> 
+<!--这是一段注释。注释不会在浏览器中显示。-->
+<script type="text/javascript">
+		function timestamp() {
+			return 't='+new Date().getTime()+''+Math.floor(Math.random()*9999+1000);
+		}
+
+		function setUrlStamp(url)
+		{
+			url = url.replace(/(^\s*)|(\s*$)/g,'');
+			if(url.indexOf("t=") == -1)
+			{
+				if(url.indexOf("?") != -1)
+				{
+					url = url+"&"+timestamp();
+				}else
+				{
+					url = url+"?"+timestamp();
+				}
+			}
+			return url;
+		}		
+</script>
+<a  id="urll" href="javascript:void(0)" target="frame01" onclick="function1('gupiaodata/top100_low_3jlt.html')" >今日成交金额TOP100+是三级板块龙头+当前pb小于历史合理pb的1.1倍(show top 100 low risk 3jlt)</a>
+<br>
+<font color="orange">&#x2691</font> 
+<a  id="url2" href="javascript:void(0)" target="frame01" onclick="function2('gupiaodata/top100_middle_3jlt.html')">今日成交金额TOP100+是三级板块龙头+当前pb小于历史合理pb的1.5倍(show top 100 middle risk 3jlt)</a>
+<br>
+<font color="orange">&#x2691</font> 
+<a  id="url3" href="javascript:void(0)" target="frame01" onclick="function3('gupiaodata/top100_low_all.html')">今日成交金额TOP100+不考虑是否是三级板块龙头+当前pb小于历史合理pb的1.1倍(show top 100 low risk all)</a>
+<br>
+<font size=5>
+<font color="red">&#x2691</font> 
+<a id="url4" href="javascript:void(0)" target="frame01" onclick="function4('gupiaodata/top100_middle_all.html')">今日成交金额TOP100+不考虑是否是三级板块龙头+当前pb小于历史合理pb的1.5倍(show top 100 middle risk all)</a>
+<br>
+<font color="red">&#x2691</font> 
+<a id="url5" href="javascript:void(0)" target="frame01" onclick="function5('gupiaodata/top100_high_all.html')">今日成交金额TOP100+不考虑是否是三级板块龙头+不考虑当前pb是否合理(show top 100 high risk all)</a>
+<br>
+</font>
+<script type="text/javascript">
+		function function1(in_str_url){
+		    var a = document.getElementById("urll");
+			var t = document.getElementById("table1");
+			t.rows[0].cells[1].innerText=a.innerText;
+			str_url_with_timestamp=setUrlStamp(in_str_url)
+			document.getElementById("iframepage1").src=str_url_with_timestamp;
+		}
+		function function2(in_str_url){
+		    var a = document.getElementById("url2");
+			var t = document.getElementById("table1");
+			t.rows[0].cells[1].innerText=a.innerText;
+			str_url_with_timestamp=setUrlStamp(in_str_url)
+			document.getElementById("iframepage1").src=str_url_with_timestamp;
+		}
+		function function3(in_str_url){
+		    var a = document.getElementById("url3");
+			var t = document.getElementById("table1");
+			t.rows[0].cells[1].innerText=a.innerText;
+			str_url_with_timestamp=setUrlStamp(in_str_url)
+			document.getElementById("iframepage1").src=str_url_with_timestamp;			
+		}
+		function function4(in_str_url){
+		    var a = document.getElementById("url4");
+			var t = document.getElementById("table1");
+			t.rows[0].cells[1].innerText=a.innerText;
+			str_url_with_timestamp=setUrlStamp(in_str_url)
+			document.getElementById("iframepage1").src=str_url_with_timestamp;			
+		}
+		function function5(in_str_url){
+		    var a = document.getElementById("url5");
+			var t = document.getElementById("table1");
+			t.rows[0].cells[1].innerText=a.innerText;
+			str_url_with_timestamp=setUrlStamp(in_str_url)
+			document.getElementById("iframepage1").src=str_url_with_timestamp;			
+		}
+		
+		function myonload(){
+			function1('gupiaodata/top100_low_3jlt.html');
+		}
+
+</script>
+
+
+
+
+<table id="table1" class="table9_4"><tr><td>这是策略【</td><td></td><td>】选股结果</td></tr></table>
+<iframe id="iframepage1" name="frame01" width="10000" height="1400"   frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src=""></iframe>
+</font>
+
+<br>
+
+
+
+</body>
+
+
+</html>

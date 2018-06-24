@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage very simple demo." />
+	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+	<meta name="Resource-type" content="Document" />
+	
+	<title>YUZ量化价值模型试运行网站</title>
+	<link rel="shortcut icon" href="files/static/image/redstar.png">
+	<link rel="stylesheet" type="text/css" href="files/user.css">
+	<link rel="stylesheet" href="files/style.css">
+	<link rel="stylesheet" type="text/css" href="fullPage.js/jquery.fullPage.css" />
+	
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">  
+
+
+
+	<script src="jquery/jquery-3.3.1.js"></script>
+	<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="fullPage.js/jquery.fullPage.js"></script>
+	
+
+</head>
+
+<body  class="fp-viewing-0" style="overflow: hidden; height: 100%;">
+
+
+
+
+
+
+  <div class="nyanss-header-wrap">
+    <div class="nyanss-header-container">
+      <div class="nyanss-menu">
+    <h1 class="nyanss-logo">
+    <a href="javascript:void(0)">YUZ量化价值模型试运行网站 </a>
+  </h1>
+<ul class="nyanss-links nyanss-left">
+ YUZ量化价值模型试运行网站<br>免责声明：这是一个程序员练习html5技术的个人网站，网站中的数据有可能是旧的，请勿参考！!
+  </ul>
+  <div class="nyanss-links nyanss-right">
+    <font color="blue">【今日成交金额TOP100】</font>刷新数据按钮： 
+	<a id="url5" href="javascript:void(0)"  onclick="aj_func_5(1,25,1,false)" class="nyanss-fc"><font color="red">&#x2691</font>TOP100首页<span></span></a>
+	<a id="url5" href="javascript:void(0)"  onclick="aj_func_5(26,50,2,false)" class="nyanss-fc"><font color="red">&#x2691</font>TOP100第二页<span></span></a>
+	<a id="url5" href="javascript:void(0)"  onclick="aj_func_5(51,75,3,false)" class="nyanss-fc"><font color="red">&#x2691</font>TOP100第三页<span></span></a>
+	<a id="url5" href="javascript:void(0)"  onclick="aj_func_5(76,100,4,false)" class="nyanss-fc"><font color="red">&#x2691</font>TOP100第四页<span></span></a>
+
+  </div>
+
+</div>
+    </div>
+  </div>
+
+  
+
+
+<script type="text/javascript">
+		function timestamp() {
+			return 't='+new Date().getTime()+''+Math.floor(Math.random()*9999+1000);
+		}
+
+		function setUrlStamp(url)
+		{
+			url = url.replace(/(^\s*)|(\s*$)/g,'');
+			if(url.indexOf("t=") == -1)
+			{
+				if(url.indexOf("?") != -1)
+				{
+					url = url+"&"+timestamp();
+				}else
+				{
+					url = url+"?"+timestamp();
+				}
+			}
+			return url;
+		}		
+</script>
+
+
+
+<script type="text/javascript"> 
+	//top100_low_3jlt.json
+	//top100_middle_3jlt.json
+	//top100_low_all.json
+	//top100_middle_3jlt.json
+	//top100_high_all.json
+	var the_top100_jsondata_str="";
+	function aj_func_5_succFunction_sub1(start_offset,end_offset,table_no_k,ttjsonstr){
+			console.log(table_no_k)
+			console.log(ttjsonstr)
+			var json = eval(ttjsonstr); //数组
+		
+			var tt = ""; 
+			var tt = '<table border=1>';
+		
+			$.each(json, function (index) {  
+				//循环获取数据 
+				var a_stock = json[index];
+
+				
+
+				if (index==0)
+				{
+					tt += '<tr>'
+					tt += '<th>' + '风险<br>等级&#8195' + '</th>';
+					tt += '<th>' + '泡沫值' + '</th>';
+					tt += '<th>' + '是哪个三级板块的龙头&#8195&#8195&#8195' + '</th>';					
+					tt += '<th>' + '智能<br>仓位<br>（元）' + '</th>';					
+
+					tt += '<th>' + '成交<br>金额<br>TOP<br>100<br>排名' + '</th>';
+
+					tt += '<th>' + '股票代码' + '</th>';
+					tt += '<th>' + '股票名称&#8195&#8195&#8195&#8195&#8195' + '</th>';
+					tt += '<th>' + '最新<br>成交价<br>（元）' + '</th>';
+					tt += '<th>' + '涨幅<br>（%）' + '</th>';
+					tt += '<th>' + '成交金额（元）' + '</th>';	
+					tt += '<th>' + '换手率<br>（%）' + '</th>';	
+					//tt += '<th>' + 'PE' + '</th>';	
+					tt += '<th>' + 'PB' + '</th>';	
+					tt += '<th>' + '总市值<br>（元）' + '</th>';	
+					//tt += '<th>' + '7年<br>最低<br>PB' + '</th>';	
+					tt += '<th>' + '7年<br>次低<br>PB&#8195' + '</th>';	
+					tt += '<th>' + '上市年数' + '</th>';					
+					tt += '</tr>'
+				}
+
+
+				if (Number(a_stock.NO)>=start_offset && Number(a_stock.NO)<=end_offset)
+				{
+				tt += '<tr>'
+				var temp_str=a_stock.risk_level;
+				if (temp_str=='low_risk')
+				{
+					temp_str='<font color="green">&#x2691</font>低'
+				}
+				else if (temp_str=='middle_risk')
+				{
+					temp_str='<font color="orange">&#x2691</font>中'
+				}
+				else
+				{
+					temp_str='<font color="red">&#x2691</font>高'
+				}
+				if (a_stock.pb_vs_minpb2>=2)
+				{
+					temp_str='<font color="red">危险</font>'
+				}
+				tt += '<td>' + temp_str + '</td>';
+				tt += '<td>' + a_stock.pb_vs_minpb2 + '</td>';
+				temp_str=a_stock.the_3jlt_name;
+				tt += '<td>' + temp_str + '</td>';
+				ai_cal_max_cangwei=(40000-(a_stock.pb_vs_minpb2-0.8)/0.1*5000).toFixed(0)
+				if (ai_cal_max_cangwei<0)
+				{
+					ai_cal_max_cangwei=0
+				}
+				
+				if(a_stock.the_3jlt_name!="-" && a_stock.the_3jlt_name.substring(0,3)=="300")
+				{
+					ai_cal_max_cangwei=ai_cal_max_cangwei/5
+				}
+				
+
+				
+				if(a_stock.code.substring(0,3)=="300")
+				{
+					ai_cal_max_cangwei=ai_cal_max_cangwei/10
+				}
+				else
+				{
+					if(a_stock.the_3jlt_name=="-")
+					{
+						ai_cal_max_cangwei=ai_cal_max_cangwei/5
+					}
+				}
+				
+				ipo_years_percent=Number(a_stock.days_after_ipo/2402).toFixed(2)
+				ai_cal_max_cangwei=ai_cal_max_cangwei*ipo_years_percent
+				
+				ai_cal_max_cangwei=(ai_cal_max_cangwei/10000).toFixed(1)
+				
+				tt += '<td>' + ai_cal_max_cangwei +  '万'+  '</td>';
+				tt += '<td>' + a_stock.NO + '</td>';
+				tt += '<td>' + a_stock.code + '</td>';
+				tt += '<td>' + a_stock.name + '</td>';
+				tt += '<td>' + a_stock.trade + '</td>';
+				tt += '<td>' + Number(a_stock.changepercent).toFixed(1) + '</td>';
+				tt += '<td>' + Number(a_stock.amount/10000/10000).toFixed(1)+ '亿'+ '</td>';
+				tt += '<td>' + Number(a_stock.turnoverratio).toFixed(1) + '</td>';				
+				//tt += '<td>' + Number(a_stock.per).toFixed(2) + '</td>';
+				tt += '<td>' + Number(a_stock.pb).toFixed(2) + '</td>';
+				tt += '<td>' + Number(a_stock.mktcap/10000).toFixed(0) + '亿'+ '</td>';
+				//tt += '<td>' + a_stock.minpb1 + '</td>';
+				tt += '<td>' + Number(a_stock.minpb2).toFixed(1) + '</td>';
+				tt += '<td>' + Number(a_stock.days_after_ipo/365).toFixed(0) + '</td>';				
+
+				
+				tt += '</tr>'
+
+				}
+				
+			});  
+			tt += '</table>';
+			var num_k=table_no_k; 
+			var str_k=num_k.toString();
+			var str_table_name="#treeList5_"+str_k;
+
+			$(str_table_name).html('');  
+			$(str_table_name).html(tt);  
+			console.log(tt)
+						
+	}
+	function aj_func_5(start_offset,end_offset,table_no_k,is_first_run){ 
+		//方式一 Ajax方式获取Json数据  
+		$.ajax({  
+			url: 'gupiaodata/top100_high_all.json', 	
+			//url: 'restfulapi05',
+			type: 'GET',  
+			dataType: 'json',  
+			timeout: 5000,  
+			cache: false,  //false
+			beforeSend: LoadFunction, //加载执行方法    
+			error: erryFunction,  //错误执行方法    
+			success: succFunction //成功执行方法    
+		})  
+		function LoadFunction() {  
+			$("#treeList5").html('加载数据中...');  
+		}  
+		function erryFunction() {  
+			$("#treeList5").html('加载数据失败...');  
+		}  
+		function succFunction(ttjsonstr) {
+			the_top100_jsondata_str = ttjsonstr
+			
+			aj_func_5_succFunction_sub1(start_offset,end_offset,table_no_k,ttjsonstr)
+			
+			if (is_first_run==true)
+			{
+				aj_func_5_succFunction_sub1(26,50,2,the_top100_jsondata_str)
+
+				aj_func_5_succFunction_sub1(51,75,3,the_top100_jsondata_str)
+
+				aj_func_5_succFunction_sub1(76,100,4,the_top100_jsondata_str)		
+			}			
+			
+
+		}
+		
+		
+	}
+ 
+	
+	aj_func_5(1,25,1,true)
+
+
+	
+</script> 
+<div class="light big" style="transform: translate3d(-36.75px, 1.0625px, 0px);"></div>
+<div class="light small" style="transform: translate3d(-5.88px, 0.17px, 0px);"></div>
+
+
+
+
+
+<div id="fullpage" style="height: 100%; position: relative; touch-action: none; transition: all 400ms ease 0s; transform: translate3d(0px, 0px, 0px);" class="fullpage-wrapper">
+
+<div class="section story0 fp-section fp-table" style="height: 619px;"><div class="fp-tableCell" style="height:619px;">
+		<div class="special-box">
+		<div class="text-wrapper">
+
+		<h1>top100波段投资模型</h1>
+		<h1>【只炒优质热门股票】</h1>
+		<h2>
+只选属于日成交金额top100，且是公认的板块龙头股（且最好属于同花顺三级板块龙头）的股票。
+</h2>
+<h1>【根据风险大小控制最大仓位】</h1>
+<h2>
+根据股票的风险等级的危险，高，中，低<br>设定对应的最大仓位为0.5万，1万，2万，4万。<br>
+注1：对于不是公认的板块龙头股的股票，风险等级再低都不要买！！！<br>
+<br>
+注2：泡沫值小于1.1是低风险。
+风险值小于1.5大于1.1是中风险。<br>
+大于1大于1.5小于2是高风险。<br>
+大于2是超高风险，建议清仓。<br>
+注3：泡沫值=当前pb/7年最低pb
+		</h2>
+<h1>【执行分批波段】</h1>
+		<h2>
+在不超过各风险等级的最大仓位（即智能仓位那一列所提示的值）的前提下，<br>
+每次买卖5000元，<br>
+每次7%距离，<br>
+对多只股同时做分批波段。<br>
+注：对最熟悉的券商板块，仓位控制可以松一些。<br>其它板块必须严格遵守模型。
+		</h2>
+		</div>
+		</div>
+
+
+</div>
+</div>
+
+
+<div class="section story1 fp-section fp-table" style="height: 619px;"><div class="fp-tableCell" style="height:619px;">
+		<div class="text-wrapper">
+
+		<h4>
+			<div id="treeList5_1" class="table9_4"></div>
+		</h4>
+		</div>
+  
+
+
+</div>
+
+
+</div>
+
+
+<div class="section story2 fp-section fp-table" style="height: 619px;"><div class="fp-tableCell" style="height:619px;">
+		<div class="text-wrapper">
+
+		<h4>
+			<div id="treeList5_2" class="table9_4"></div>
+		</h4>
+		</div>
+  
+
+
+</div>
+
+
+</div>
+
+<div class="section story3 fp-section fp-table" style="height: 619px;"><div class="fp-tableCell" style="height:619px;">
+		<div class="text-wrapper">
+
+		<h4>
+			<div id="treeList5_3" class="table9_4"></div>
+		</h4>
+		</div>
+  
+
+
+</div>
+
+
+</div>
+
+<div class="section story4 fp-section fp-table" style="height: 619px;"><div class="fp-tableCell" style="height:619px;">
+		<div class="text-wrapper">
+
+		<h4>
+			<div id="treeList5_4" class="table9_4"></div>
+		</h4>
+		</div>
+  
+
+
+</div>
+
+
+</div>
+
+</div>
+
+<div id="downtip" class=""></div>
+
+<script>
+
+    $(function(){  
+        //alert("HelloWord!!!"); 
+		//向下
+		$('#downtip').click(function() {
+		  $.fn.fullpage.moveSectionDown();
+		});
+
+		//fullpage init
+		$('#fullpage').fullpage({
+		  scrollingSpeed: 400,
+		  easingcss3: 'ease',
+		  afterLoad: function(anchorLink, index) {
+
+
+			if (index == 5) {
+			  $('#downtip').addClass('hidden');
+			} else {
+			  $('#downtip').removeClass('hidden');
+			}
+
+			$($('.navi-button:not(.buy-collection,.buy-normal)').removeClass('active')[index - 1]).addClass('active');
+
+		  }
+		});	
+		
+	
+		
+		//光斑
+		$(window).on('mousemove', function(event) {
+		  var translateX_big = (event.pageX - window.innerWidth / 2) / 8 + 'px';
+		  var translateY_big = (event.pageY - window.innerHeight / 2) / 8 + 'px';
+		  var translateX_small = (event.pageX - window.innerWidth / 2) / 50 + 'px';
+		  var translateY_small = (event.pageY - window.innerHeight / 2) / 50 + 'px';
+
+		  $('.light.big').css('transform', 'translate3d(' + translateX_big + ',' + translateY_big + ',0)');
+		  $('.light.small').css('transform', 'translate3d(' + translateX_small + ',' + translateY_small + ',0)');
+
+		});		
+		
+    })
+
+</script>
+
+
+
+</body>
+
+
+</html>
