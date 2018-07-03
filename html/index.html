@@ -184,9 +184,17 @@
 				ipo_years_percent=Number(a_stock.days_after_ipo/2402).toFixed(2)
 				ai_cal_max_cangwei=ai_cal_max_cangwei*ipo_years_percent
 				
-				ai_cal_max_cangwei=(ai_cal_max_cangwei/10000).toFixed(1)
+
 				
-				tt += '<td>' + ai_cal_max_cangwei +  '万'+  '</td>';
+				ai_cal_max_gufen=ai_cal_max_cangwei/Number(a_stock.trade)
+				
+				ai_cal_max_cangwei=ai_cal_max_cangwei/10000
+				ai_cal_max_cangwei=(ai_cal_max_cangwei).toFixed(1)
+				
+				ai_cal_max_gufen=Math.floor(ai_cal_max_gufen*1.0/100)
+				
+				
+				tt += '<td>' + ai_cal_max_cangwei +  '万'+'['+ai_cal_max_gufen+'手]'+'</td>';
 				tt += '<td>' + a_stock.NO + '</td>';
 				tt += '<td>' + a_stock.code + '</td>';
 				tt += '<td>' + a_stock.name + '</td>';
